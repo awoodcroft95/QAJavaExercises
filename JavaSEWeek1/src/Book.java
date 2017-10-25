@@ -44,6 +44,14 @@ class Journal extends Book implements AcademicTexts {
     public void extendReturnDate() {
 
     }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
 }
 
 class Magazine extends Book {
@@ -58,4 +66,12 @@ class Magazine extends Book {
 
     //Methods go here
 
+
+    public int getIssueNumber() {
+        return issueNumber;
+    }
+
+    public void setIssueNumber(int issueNumber) {
+        this.issueNumber = issueNumber;
+    }
 }
