@@ -14,6 +14,7 @@ public class LibrarySystem {
     private String filePath = "C:/Users/Admin/Documents/LibraryContents.txt";
 
     private List<LibraryItem> libraryItemList = new ArrayList<LibraryItem>();
+    private List<User> userList = new ArrayList<User>();
 
     public LibrarySystem() {
         try {
@@ -30,4 +31,37 @@ public class LibrarySystem {
         bufferedReader = new BufferedReader(reader);
     }
 
+    public int getItemID(){
+        return itemID;
+    }
+
+    public int getUserID(){
+        return userID;
+    }
+
+    private void updateItemID(){
+        itemID++;
+    }
+
+    private void updateUserID(){
+        userID++;
+    }
+
+    public void issueItem(User user, LibraryItem item){
+        //add item to user list
+        //remove item from library list
+    }
+
+    public void returnItem(User user, LibraryItem item){
+        //remove item from user list
+        //add item back to library list
+    }
+
+    public void addNewUser(String userName, int userID, int phoneNo){
+
+
+        User temp = new User(userID, userName, phoneNo);
+
+
+    }
 }
