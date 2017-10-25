@@ -93,5 +93,28 @@ public class LibrarySystem {
     public void addNewItem(double price, String bookName, String authorName){
         Book temp = new Book(itemID, price, bookName, authorName);
         libraryItemList.add(temp);
+        updateItemID();
+    }
+
+    public void addNewItem(double price, String bookName, String authorNameLocation, String topicDate, String type){
+        if (type.equals("Journal")){
+            Journal temp = new Journal(itemID, price, bookName, authorNameLocation, topicDate);
+            libraryItemList.add(temp);
+            updateItemID();
+        }
+        else if (type.equals("Map")){
+            Map temp = new Map(bookName, itemID, price, authorNameLocation, topicDate);
+            libraryItemList.add(temp);
+            updateItemID();
+        }
+        else{
+            //do something?Error Message?
+        }
+    }
+
+    public void addNewItem(double price, String bookName, String authorName, int issueNumber){
+        Magazine temp = new Magazine(itemID, price, bookName, authorName, issueNumber);
+        libraryItemList.add(temp);
+        updateItemID();
     }
 }
