@@ -2,12 +2,12 @@ public abstract class LibraryItem {
 
     //Attributes go here
     private String itemName;
-    private String itemID;
+    private int itemID;
     private double price;
     private boolean outStatus;
     private String returnDate;
 
-    public LibraryItem(String itemName, String itemID, double price) {
+    public LibraryItem(String itemName, int itemID, double price) {
         this.itemName = itemName;
         this.itemID = itemID;
         this.price = price;
@@ -17,7 +17,7 @@ public abstract class LibraryItem {
 
     //Methods go here
 //Getters and Setters
-    public String getItemID() {
+    public int getItemID() {
         return itemID;
     }
 
@@ -41,7 +41,7 @@ public abstract class LibraryItem {
         this.itemName = itemName;
     }
 
-    public void setItemID(String itemID) {
+    public void setItemID(int itemID) {
         this.itemID = itemID;
     }
 
@@ -63,7 +63,7 @@ class Map extends LibraryItem {
     private String location;
     private String date;
 
-    public Map(String itemName, String itemID, double price, String location, String date) {
+    public Map(String itemName, int itemID, double price, String location, String date) {
         super(itemName, itemID, price);
         this.location = location;
         this.date = date;

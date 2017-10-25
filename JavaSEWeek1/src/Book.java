@@ -1,25 +1,14 @@
 public class Book extends LibraryItem {
 
     //Attributes go here
-    private String bookName;
     private String authorName;
 
-    public Book(String itemName, String itemID, double price, String bookName, String authorName) {
-        super(itemName, itemID, price);
-        this.bookName = bookName;
+    public Book(int itemID, double price, String bookName, String authorName) {
+        super(bookName, itemID, price);
         this.authorName = authorName;
     }
 
 //Methods go here
-
-
-    public String getBookName() {
-        return bookName;
-    }
-
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
-    }
 
     public String getAuthorName() {
         return authorName;
@@ -35,8 +24,8 @@ class Journal extends Book implements AcademicTexts {
     //Attributes go here
     private String topic;
 
-    public Journal(String itemName, String itemID, double price, String bookName, String authorName, String topic) {
-        super(itemName, itemID, price, bookName, authorName);
+    public Journal(int itemID, double price, String bookName, String authorName, String topic) {
+        super(itemID, price, bookName, authorName);
         this.topic = topic;
     }
 
@@ -59,8 +48,8 @@ class Magazine extends Book {
     //Attributes go here
     private int issueNumber;
 
-    public Magazine(String itemName, String itemID, double price, String bookName, String authorName, int issueNumber) {
-        super(itemName, itemID, price, bookName, authorName);
+    public Magazine(int itemID, double price, String bookName, String authorName, int issueNumber) {
+        super(itemID, price, bookName, authorName);
         this.issueNumber = issueNumber;
     }
 

@@ -53,28 +53,31 @@ public class LibrarySystem {
     }
 
     public void returnItem(User user, LibraryItem item){
-        //remove item from user list
         //add item back to library list
+        //remove item from user list
     }
 
-    public void addNewUser(int userID, String userName, int phoneNo){
+    public void addNewUser(String userName, int phoneNo){
 
         User temp = new User(userID, userName, phoneNo);
         userList.add(temp);
+        updateUserID();
     }
 
-    public void addNewUser(int userID, String userName, int phoneNo, int specialID, String type){
+    public void addNewUser(String userName, int phoneNo, int specialID, String type){
         User tempSpecial;
         if (type.equals("Student")){
             tempSpecial = new Student(userID, userName, phoneNo, specialID);
             userList.add(tempSpecial);
+            updateUserID();
         }
         else if (type.equals("Faculty")){
             tempSpecial = new Faculty(userID, userName, phoneNo, specialID);
             userList.add(tempSpecial);
+            updateUserID();
         }
         else{
-            //Do something?
+            //Do something?Error Message?
         }
     }
 
@@ -82,7 +85,13 @@ public class LibrarySystem {
         userList.remove(user);
     }
 
-    public void updateUser(User user){
+    public void updateUser(User user, String userName, int phoneNo){
+        user.setUserName(userName);
+        user.setPhoneNo(phoneNo);
+    }
 
+    public void addNewItem(double price, String bookName, String authorName){
+        Book temp = new Book(itemID, price, bookName, authorName);
+        libraryItemList.add(temp);
     }
 }
