@@ -57,11 +57,28 @@ public class LibrarySystem {
         //add item back to library list
     }
 
-    public void addNewUser(String userName, int userID, int phoneNo){
-
+    public void addNewUser(int userID, String userName, int phoneNo){
 
         User temp = new User(userID, userName, phoneNo);
+        userList.add(temp);
+    }
 
+    public void addNewUser(int userID, String userName, int phoneNo, int specialID, String type){
+        User tempSpecial;
+        if (type.equals("Student")){
+            tempSpecial = new Student(userID, userName, phoneNo, specialID);
+            userList.add(tempSpecial);
+        }
+        else if (type.equals("Faculty")){
+            tempSpecial = new Faculty(userID, userName, phoneNo, specialID);
+            userList.add(tempSpecial);
+        }
+        else{
+            //Do something?
+        }
+    }
+
+    public void deleteUser(User user){
 
     }
 }
