@@ -79,6 +79,10 @@ public class LibrarySystem {
     }
 
     public void deleteUser(User user){
+        userList.remove(user);
+    }
+
+    public void updateUser(User user){
 
     }
 }

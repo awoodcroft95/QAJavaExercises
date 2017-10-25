@@ -13,6 +13,37 @@ public class User {
         this.phoneNo = phoneNo;
     }
 
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(int phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public List<LibraryItem> getItemsRented() {
+        return itemsRented;
+    }
+
+    public void setItemsRented(List<LibraryItem> itemsRented) {
+        this.itemsRented = itemsRented;
+    }
 }
 
 class Student extends User {
