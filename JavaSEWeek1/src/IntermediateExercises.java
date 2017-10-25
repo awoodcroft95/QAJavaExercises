@@ -1,4 +1,3 @@
-import  static  org.junit.jupiter.api.Assertions.*;
 public class IntermediateExercises {
     public static void main(String[] args){
         System.out.println(blackJack(12, 21));
