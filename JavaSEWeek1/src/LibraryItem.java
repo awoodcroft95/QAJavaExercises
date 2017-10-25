@@ -7,6 +7,13 @@ public abstract class LibraryItem {
     private boolean outStatus;
     private String returnDate;
 
+    public LibraryItem(String itemName, String itemID, double price) {
+        this.itemName = itemName;
+        this.itemID = itemID;
+        this.price = price;
+        this.outStatus = false;
+    }
+
 
     //Methods go here
 //Getters and Setters
@@ -53,8 +60,13 @@ public abstract class LibraryItem {
 
 class Map extends LibraryItem {
 
-    public Map() {
+    private String location;
+    private String date;
 
+    public Map(String itemName, String itemID, double price, String location, String date) {
+        super(itemName, itemID, price);
+        this.location = location;
+        this.date = date;
     }
 
 }
