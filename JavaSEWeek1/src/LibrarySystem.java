@@ -4,8 +4,8 @@ import java.util.List;
 
 public class LibrarySystem {
 
-    private static int itemID;
-    private static int userID;
+    private static int itemID = 0;
+    private static int userID = 0;
 
     private FileWriter writer ;
     private FileReader reader;
@@ -116,5 +116,13 @@ public class LibrarySystem {
         Magazine temp = new Magazine(itemID, price, bookName, authorName, issueNumber);
         libraryItemList.add(temp);
         updateItemID();
+    }
+
+    public void removeItem(LibraryItem item){
+        libraryItemList.remove(item);
+    }
+
+    public void removeItems(List<LibraryItem> itemList){
+        libraryItemList.removeAll(itemList);
     }
 }
