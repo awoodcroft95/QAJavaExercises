@@ -31,7 +31,11 @@ class Journal extends Book implements AcademicTexts {
 
     @Override
     public void extendReturnDate() {
-
+        String tempReturnDateString;
+        int tempReturnDateInt;
+        tempReturnDateString = this.getReturnDate();
+        tempReturnDateInt = Integer.parseInt(tempReturnDateString) + 5;
+        this.setReturnDate("" + tempReturnDateInt);
     }
 
     public String getTopic() {
