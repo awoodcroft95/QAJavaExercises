@@ -1,3 +1,5 @@
+package garage;
+
 public class Vehicle {
     protected int numOfWheels;
     protected int numOfSeats;

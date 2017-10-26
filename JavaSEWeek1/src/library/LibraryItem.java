@@ -1,3 +1,5 @@
+package library;
+
 public abstract class LibraryItem {
 
     //Attributes go here
@@ -55,6 +57,10 @@ public abstract class LibraryItem {
 
     public void setReturnDate(String returnDate) {
         this.returnDate = returnDate;
+    }
+
+    public String returnItemDetails(){
+        return this.itemName + " ID:" + this.itemID + " £" + this.price;
     }
 }
 

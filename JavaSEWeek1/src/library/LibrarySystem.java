@@ -1,3 +1,5 @@
+package library;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,12 +68,12 @@ public class LibrarySystem {
 
     public void addNewUser(String userName, int phoneNo, int specialID, String type){
         User tempSpecial;
-        if (type.equals("Student")){
+        if (type.equals("library.Student")){
             tempSpecial = new Student(userID, userName, phoneNo, specialID);
             userList.add(tempSpecial);
             updateUserID();
         }
-        else if (type.equals("Faculty")){
+        else if (type.equals("library.Faculty")){
             tempSpecial = new Faculty(userID, userName, phoneNo, specialID);
             userList.add(tempSpecial);
             updateUserID();
@@ -97,12 +99,12 @@ public class LibrarySystem {
     }
 
     public void addNewItem(double price, String bookName, String authorNameLocation, String topicDate, String type){
-        if (type.equals("Journal")){
+        if (type.equals("library.Journal")){
             Journal temp = new Journal(itemID, price, bookName, authorNameLocation, topicDate);
             libraryItemList.add(temp);
             updateItemID();
         }
-        else if (type.equals("Map")){
+        else if (type.equals("library.Map")){
             Map temp = new Map(bookName, itemID, price, authorNameLocation, topicDate);
             libraryItemList.add(temp);
             updateItemID();

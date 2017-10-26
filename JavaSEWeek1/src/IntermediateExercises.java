@@ -4,7 +4,7 @@ public class IntermediateExercises {
         System.out.println(uniqueSum(1, 1, 2));
         System.out.println(tooHot(91, true));
         peopleTask();
-        garageExercise();
+        // For garage exercise see garage package - garageExercise();
         paintWizard(500);
         filesIO();
     }
@@ -77,27 +77,6 @@ public class IntermediateExercises {
         System.out.println(m.personSearch("John"));
     }
 
-
-
-    public static void garageExercise(){
-        Car muscleCar = new Car(2, 4, "Mustang", true);
-        Motorbike sportBike = new Motorbike(2, 1, "Yamaha", true);
-        Bicycle bMX = new Bicycle(2, 1, "Offroader", 2);
-        Garage bobsGarage = new Garage();
-
-        bobsGarage.addVehicle(muscleCar);
-        bobsGarage.addVehicle(sportBike);
-        bobsGarage.addVehicle(bMX);
-        bobsGarage.printGarageContents();
-
-        sportBike.setBroken();
-
-        System.out.println("Cost of repairing a car £" + bobsGarage.fixVehicle(muscleCar));
-        bobsGarage.removeVehicleByType("Car");
-        bobsGarage.printGarageContents();
-
-
-    }
 
     public static void paintWizard(int areaToPaint){
 

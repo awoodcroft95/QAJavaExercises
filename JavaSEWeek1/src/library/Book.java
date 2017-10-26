@@ -1,3 +1,5 @@
+package library;
+
 public class Book extends LibraryItem {
 
     //Attributes go here
@@ -16,6 +18,10 @@ public class Book extends LibraryItem {
 
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
+    }
+
+    public String returnBookDetails(){
+        return this.getItemName() + " " + this.getAuthorName() + " ID:" + this.getItemID() + " £" + this.getPrice();
     }
 }
 
