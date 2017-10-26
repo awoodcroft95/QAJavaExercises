@@ -65,6 +65,11 @@ class Student extends User {
         super(userID, userName, phoneNo);
         this.studentID = studentID;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "-" +  this.studentID;
+    }
 }
 
 class Faculty extends User {
@@ -77,5 +82,10 @@ class Faculty extends User {
 
     public void extendRerturnDate(){
 
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "-" + this.facultyID;
     }
 }
