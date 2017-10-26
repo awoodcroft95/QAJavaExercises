@@ -114,13 +114,13 @@ public class LibrarySystem {
         libraryItemList.add(newItem);
     }
 
-    public void addNewItem(double price, String bookName, String authorName){
+    public void addNewItem(String bookName, double price, String authorName){
         Book temp = new Book(bookName, itemID, price, authorName);
         libraryItemList.add(temp);
         updateItemID();
     }
 
-    public void addNewItem(double price, String bookName, String authorNameLocation, String topicDate, String type){
+    public void addNewItem(String bookName, double price, String authorNameLocation, String topicDate, String type){
         if (type.equals("Journal")){
             Journal temp = new Journal(bookName, itemID, price, authorNameLocation, topicDate);
             libraryItemList.add(temp);
@@ -136,7 +136,7 @@ public class LibrarySystem {
         }
     }
 
-    public void addNewItem(double price, String bookName, String authorName, int issueNumber){
+    public void addNewItem(String bookName, double price, String authorName, int issueNumber){
         Magazine temp = new Magazine(bookName, itemID, price, authorName, issueNumber);
         libraryItemList.add(temp);
         updateItemID();

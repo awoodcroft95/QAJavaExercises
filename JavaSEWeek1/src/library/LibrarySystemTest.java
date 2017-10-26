@@ -57,7 +57,7 @@ class LibrarySystemTest {
 
     @Test
     void addLibraryItemToList() {
-        testSystem.addNewItem(1.0, "Book1", "JohnSmith");
+        testSystem.addNewItem("Book1",1.0, "JohnSmith");
         int result = testSystem.getItemListSize();
         assertEquals(1, result);
         String toStringResult = testSystem.getLibraryItemList().get(0).toString();
