@@ -164,6 +164,24 @@ public class LibrarySystem {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void saveUsersToFile(){
+        for (User user : userList){
+            try {
+                bufferedWriter.write(user.toString(), 0, user.toString().length());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                bufferedWriter.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void closeWriterStream(){
         try {
             bufferedWriter.close();
         } catch (IOException e) {

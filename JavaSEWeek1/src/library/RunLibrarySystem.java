@@ -14,17 +14,18 @@ public class RunLibrarySystem {
         Magazine testMag = new Magazine("Mag1", 3, 3.0, "Empire", 23);
 
         manchesterLibrary.addNewItem("Book1", 1.0, "John Smith");
-        manchesterLibrary.addNewUser("John Smith", 123);
-        manchesterLibrary.addNewUser("Anthony Woodcroft", 123456);
         manchesterLibrary.addNewItem("Journal1", 2.0, "Steve Hawk", "Space", "Journal");
         manchesterLibrary.addNewItem("Mag1", 3.0, "Empire", 23);
         manchesterLibrary.addNewItem("Map1", 20.0, "World", "June 2010", "Map");
+
+        manchesterLibrary.addNewUser("John Smith", 123);
+        manchesterLibrary.addNewUser("Anthony Woodcroft", 123456);
 
         boolean programRunning = true;
 
         while (programRunning) {
             System.out.println("Possible Commands: 1 : Show Item List, 2 : Show User List");
-            System.out.println("3 : Add User, 4 : Add Item, 5 : Save Library Contents to File");
+            System.out.println("3 : Add User, 4 : Add Item, 5 : Save Library Contents to File, 6 : Save Users to File");
             System.out.println("Exit : Exit the program(Changes will not be saved).");
             System.out.println("Enter Library System command:");
             String command = sc.nextLine();
@@ -69,12 +70,18 @@ public class RunLibrarySystem {
                     manchesterLibrary.addNewUser(userDataName, userDataPhoneNoInt, userFacultyID, "Faculty");
                 }
                 System.out.println(manchesterLibrary.getUserList().get(manchesterLibrary.getUserList().size() - 1));
-            } else if (command.equals("Exit")) {
-                programRunning = false;
             } else if(command.equals("5")){
                 System.out.println("SAVING LIBRARY CONTENTS TO FILE...");
                 manchesterLibrary.saveLibraryContentsToFile();
-                System.out.println("LIBRARY CONTENTS SAVE TO C:/Users/Admin/IdeaProjects/QAJavaExercises/JavaSEWeek1/src/library/LibraryContents.txt");
+                System.out.println("LIBRARY CONTENTS SAVED TO C:/Users/Admin/IdeaProjects/QAJavaExercises/JavaSEWeek1/src/library/LibraryContents.txt");
+            } else if (command.equals("6")){
+                System.out.println("SAVING LIBRARY USERS TO FILE...");
+                manchesterLibrary.saveUsersToFile();
+                System.out.println("LIBRARY USERS SAVED TO C:/Users/Admin/IdeaProjects/QAJavaExercises/JavaSEWeek1/src/library/UsersList.txt");
+            }
+            else if (command.equals("Exit")) {
+                manchesterLibrary.closeWriterStream();
+                programRunning = false;
             }
             else {
                 System.out.println("Please Enter a Valid Command.");

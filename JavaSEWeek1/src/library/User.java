@@ -53,7 +53,7 @@ public class User {
 
     @Override
     public String toString() {
-        return this.getUserName() + "-" + this.getUserID() + "-" + this.getPhoneNo();
+        return this.getClass().getName() + "-" + this.getUserName() + "-" + this.getUserID() + "-" + this.getPhoneNo();
     }
 }
 

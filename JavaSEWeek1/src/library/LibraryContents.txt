@@ -1,4 +1,0 @@
-library.Book-Book1-1-1.0-John Smith
-library.Journal-Journal1-2-2.0-Steve Hawk-Space
-library.Magazine-Mag1-3-3.0-Empire-23
-library.Map-Map1-4-20.0-World-June 2010
