@@ -62,6 +62,10 @@ public abstract class LibraryItem {
     public String returnItemDetails(){
         return this.itemName + " ID:" + this.itemID + " £" + this.price;
     }
+
+    public String toString(){
+        return this.getItemName() + "-" + this.getItemID() + "-" + this.getPrice();
+    }
 }
 
 class Map extends LibraryItem {
@@ -89,5 +93,10 @@ class Map extends LibraryItem {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "-" + this.getLocation() + "-" + this.getDate();
     }
 }

@@ -5,7 +5,7 @@ public class Book extends LibraryItem {
     //Attributes go here
     private String authorName;
 
-    public Book(int itemID, double price, String bookName, String authorName) {
+    public Book(String bookName, int itemID, double price, String authorName) {
         super(bookName, itemID, price);
         this.authorName = authorName;
     }
@@ -23,6 +23,11 @@ public class Book extends LibraryItem {
     public String returnBookDetails(){
         return this.getItemName() + " " + this.getAuthorName() + " ID:" + this.getItemID() + " £" + this.getPrice();
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "-" + this.getAuthorName();
+    }
 }
 
 class Journal extends Book implements AcademicTexts {
@@ -30,8 +35,8 @@ class Journal extends Book implements AcademicTexts {
     //Attributes go here
     private String topic;
 
-    public Journal(int itemID, double price, String bookName, String authorName, String topic) {
-        super(itemID, price, bookName, authorName);
+    public Journal(String bookName, int itemID, double price, String authorName, String topic) {
+        super(bookName, itemID, price, authorName);
         this.topic = topic;
     }
 
@@ -56,6 +61,11 @@ class Journal extends Book implements AcademicTexts {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "-" + this.getTopic();
+    }
 }
 
 class Magazine extends Book {
@@ -63,8 +73,8 @@ class Magazine extends Book {
     //Attributes go here
     private int issueNumber;
 
-    public Magazine(int itemID, double price, String bookName, String authorName, int issueNumber) {
-        super(itemID, price, bookName, authorName);
+    public Magazine(String bookName, int itemID, double price, String authorName, int issueNumber) {
+        super(bookName, itemID, price, authorName);
         this.issueNumber = issueNumber;
     }
 
@@ -80,5 +90,10 @@ class Magazine extends Book {
 
     public void setIssueNumber(int issueNumber) {
         this.issueNumber = issueNumber;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "-" + this.getIssueNumber();
     }
 }

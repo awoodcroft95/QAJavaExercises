@@ -14,9 +14,9 @@ class ItemTest {
 
     @BeforeEach
     void setUp() {
-        testBook = new Book(1, 1.0, "Book1", "JohnSmith");
-        testJournal = new Journal(2, 2.0, "Journal1", "Steve Hawk", "Space");
-        testMag = new Magazine(3, 3.0, "Mag1", "Empire", 23);
+        testBook = new Book("Book1", 1, 1.0, "JohnSmith");
+        testJournal = new Journal("Journal1",2, 2.0,"Steve Hawk", "Space");
+        testMag = new Magazine("Mag1",3, 3.0, "Empire", 23);
     }
 
     @AfterEach

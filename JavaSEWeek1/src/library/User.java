@@ -46,6 +46,10 @@ public class User {
     public void addToItemsRented(LibraryItem newItem){
         this.itemsRented.add(newItem);
     }
+
+    public void removeRentedItem(LibraryItem oldItem){
+        this.itemsRented.remove(oldItem);
+    }
 }
 
 class Student extends User {

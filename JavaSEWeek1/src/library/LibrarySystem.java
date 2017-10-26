@@ -55,8 +55,8 @@ public class LibrarySystem {
     }
 
     public void returnItem(User user, LibraryItem item){
-        //add item back to library list
-        //remove item from user list
+        libraryItemList.add(item);
+        user.removeRentedItem(item);
     }
 
     public void addNewUser(String userName, int phoneNo){
@@ -93,18 +93,18 @@ public class LibrarySystem {
     }
 
     public void addNewItem(double price, String bookName, String authorName){
-        Book temp = new Book(itemID, price, bookName, authorName);
+        Book temp = new Book(bookName, itemID, price, authorName);
         libraryItemList.add(temp);
         updateItemID();
     }
 
     public void addNewItem(double price, String bookName, String authorNameLocation, String topicDate, String type){
-        if (type.equals("library.Journal")){
-            Journal temp = new Journal(itemID, price, bookName, authorNameLocation, topicDate);
+        if (type.equals("Journal")){
+            Journal temp = new Journal(bookName, itemID, price, authorNameLocation, topicDate);
             libraryItemList.add(temp);
             updateItemID();
         }
-        else if (type.equals("library.Map")){
+        else if (type.equals("Map")){
             Map temp = new Map(bookName, itemID, price, authorNameLocation, topicDate);
             libraryItemList.add(temp);
             updateItemID();
@@ -115,7 +115,7 @@ public class LibrarySystem {
     }
 
     public void addNewItem(double price, String bookName, String authorName, int issueNumber){
-        Magazine temp = new Magazine(itemID, price, bookName, authorName, issueNumber);
+        Magazine temp = new Magazine(bookName, itemID, price, authorName, issueNumber);
         libraryItemList.add(temp);
         updateItemID();
     }
@@ -126,5 +126,25 @@ public class LibrarySystem {
 
     public void removeItems(List<LibraryItem> itemList){
         libraryItemList.removeAll(itemList);
+    }
+
+    public void saveLibraryContentsToFile(){
+        for (LibraryItem item : libraryItemList){
+            try {
+                bufferedWriter.write(item.toString(), 0, item.toString().length());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                bufferedWriter.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
