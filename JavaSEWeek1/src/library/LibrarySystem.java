@@ -14,6 +14,7 @@ public class LibrarySystem {
     private BufferedWriter bufferedWriter;
     private BufferedReader bufferedReader;
     private String filePath = "C:/Users/Admin/IdeaProjects/QAJavaExercises/JavaSEWeek1/src/library/LibraryContents.txt";
+    private String filePathUsers = "C:/Users/Admin/IdeaProjects/QAJavaExercises/JavaSEWeek1/src/library/UserList.txt";
 
     private List<LibraryItem> libraryItemList = new ArrayList<LibraryItem>();
     private List<User> userList = new ArrayList<User>();

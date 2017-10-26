@@ -11,18 +11,21 @@ public class RunLibrarySystem {
         LibrarySystem manchesterLibrary = new LibrarySystem();
         Scanner sc = new Scanner(System.in);
 
-        Book testBook = new Book("Book1", 1, 1.0, "JohnSmith");
-        Journal testJournal = new Journal("Journal1", 2, 2.0, "Steve Hawk", "Space");
         Magazine testMag = new Magazine("Mag1", 3, 3.0, "Empire", 23);
 
         manchesterLibrary.addNewItem("Book1", 1.0, "John Smith");
         manchesterLibrary.addNewUser("John Smith", 123);
+        manchesterLibrary.addNewUser("Anthony Woodcroft", 123456);
+        manchesterLibrary.addNewItem("Journal1", 2.0, "Steve Hawk", "Space", "Journal");
+        manchesterLibrary.addNewItem("Mag1", 3.0, "Empire", 23);
+        manchesterLibrary.addNewItem("Map1", 20.0, "World", "June 2010", "Map");
 
         boolean programRunning = true;
 
         while (programRunning) {
             System.out.println("Possible Commands: 1 : Show Item List, 2 : Show User List");
-            System.out.println("3 : Add User, 4 : Add Item");
+            System.out.println("3 : Add User, 4 : Add Item, 5 : Save Library Contents to File");
+            System.out.println("Exit : Exit the program(Changes will not be saved).");
             System.out.println("Enter Library System command:");
             String command = sc.nextLine();
             if (command.equals("1")) {
@@ -52,9 +55,9 @@ public class RunLibrarySystem {
                     String userDataName = sc.nextLine();
                     int userDataPhoneNoInt = 0;
                     userDataPhoneNoInt = handleNumericalInput(sc);
-                    int userStudetnID = 0;
-                    userStudetnID = handleNumericalInput(sc);
-                    manchesterLibrary.addNewUser(userDataName, userDataPhoneNoInt, userStudetnID, "Student");
+                    int userStudentID = 0;
+                    userStudentID = handleNumericalInput(sc);
+                    manchesterLibrary.addNewUser(userDataName, userDataPhoneNoInt, userStudentID, "Student");
                 } else if (userCommand.equals("3")){
                     System.out.println("Enter the user information in the following order:");
                     System.out.println("Name, Phone Number, Faculty ID     Press 'Enter/Return' after each piece of information.");
@@ -68,7 +71,12 @@ public class RunLibrarySystem {
                 System.out.println(manchesterLibrary.getUserList().get(manchesterLibrary.getUserList().size() - 1));
             } else if (command.equals("Exit")) {
                 programRunning = false;
-            } else {
+            } else if(command.equals("5")){
+                System.out.println("SAVING LIBRARY CONTENTS TO FILE...");
+                manchesterLibrary.saveLibraryContentsToFile();
+                System.out.println("LIBRARY CONTENTS SAVE TO C:/Users/Admin/IdeaProjects/QAJavaExercises/JavaSEWeek1/src/library/LibraryContents.txt");
+            }
+            else {
                 System.out.println("Please Enter a Valid Command.");
             }
         }
