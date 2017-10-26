@@ -13,10 +13,12 @@ public class LibrarySystem {
     private FileReader reader;
     private BufferedWriter bufferedWriter;
     private BufferedReader bufferedReader;
-    private String filePath = "C:/Users/Admin/Documents/LibraryContents.txt";
+    private String filePath = "/src/library/LibraryContents.txt";
 
     private List<LibraryItem> libraryItemList = new ArrayList<LibraryItem>();
     private List<User> userList = new ArrayList<User>();
+    private List<LibraryItem> tempItemList = new ArrayList<LibraryItem>();
+    private String[] tempArray;
 
     public LibrarySystem() {
         try {
@@ -145,6 +147,38 @@ public class LibrarySystem {
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void readLibraryContentsFile(){
+        String currentLine = "";
+        LibraryItem tempItem;
+        while (currentLine != null){
+            try {
+                currentLine = bufferedReader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+                currentLine = null;
+            }
+            if (currentLine != null){
+                tempArray = currentLine.split("-");
+                if(tempArray[0].equals("Book")){
+                    tempItem = new Book(tempArray[1], Integer.parseInt(tempArray[2]), Double.parseDouble(tempArray[3]), tempArray[4]);
+                    tempItemList.add(tempItem);
+                }
+                else if (tempArray[0].equals("Journal")){
+                    tempItem = new Journal(tempArray[1], Integer.parseInt(tempArray[2]), Double.parseDouble(tempArray[3]), tempArray[4], tempArray[5]);
+                    tempItemList.add(tempItem);
+                }
+                else if (tempArray[0].equals("Magazine")){
+                    tempItem = new Magazine(tempArray[1], Integer.parseInt(tempArray[2]), Double.parseDouble(tempArray[3]), tempArray[4], Integer.parseInt(tempArray[5]));
+                    tempItemList.add(tempItem);
+                }
+                else if (tempArray[0].equals("Map")){
+                    tempItem = new Map(tempArray[1], Integer.parseInt(tempArray[2]), Double.parseDouble(tempArray[3]), tempArray[4], tempArray[5]);
+                    tempItemList.add(tempItem);
+                }
+            }
         }
     }
 }

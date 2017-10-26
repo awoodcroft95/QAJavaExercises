@@ -64,7 +64,7 @@ public abstract class LibraryItem {
     }
 
     public String toString(){
-        return this.getItemName() + "-" + this.getItemID() + "-" + this.getPrice();
+        return this.getClass().getName() + "-" + this.getItemName() + "-" + this.getItemID() + "-" + this.getPrice();
     }
 }
 
