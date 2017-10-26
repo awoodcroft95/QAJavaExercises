@@ -50,8 +50,8 @@ public class LibrarySystem {
     }
 
     public void issueItem(User user, LibraryItem item){
-        //add item to user list
-        //remove item from library list
+        user.addToItemsRented(item);
+        libraryItemList.remove(item);
     }
 
     public void returnItem(User user, LibraryItem item){
