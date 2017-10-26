@@ -44,6 +44,11 @@ class Journal extends Book implements AcademicTexts {
         this.setReturnDate("" + tempReturnDateInt);
     }
 
+    @Override
+    public String returnBookDetails() {
+        return super.returnBookDetails() + " Topic:" + this.getTopic();
+    }
+
     public String getTopic() {
         return topic;
     }
@@ -64,7 +69,10 @@ class Magazine extends Book {
     }
 
     //Methods go here
-
+    @Override
+    public String returnBookDetails() {
+        return super.returnBookDetails() + " IssueNo:" + this.getIssueNumber();
+    }
 
     public int getIssueNumber() {
         return issueNumber;

@@ -43,10 +43,6 @@ public class User {
         return itemsRented;
     }
 
-    public void setItemsRented(List<LibraryItem> itemsRented) {
-        this.itemsRented = itemsRented;
-    }
-
     public void addToItemsRented(LibraryItem newItem){
         this.itemsRented.add(newItem);
     }
