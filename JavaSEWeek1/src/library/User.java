@@ -50,6 +50,11 @@ public class User {
     public void removeRentedItem(LibraryItem oldItem){
         this.itemsRented.remove(oldItem);
     }
+
+    @Override
+    public String toString() {
+        return this.getUserName() + "-" + this.getUserID() + "-" + this.getPhoneNo();
+    }
 }
 
 class Student extends User {
