@@ -12,6 +12,8 @@ public class BasicExercises {
         arrays();
         iterationOverArrays();
         iterationOverArrays2();
+
+        System.out.println(9 % 10);
     }
 
     public static void outputString(String input){

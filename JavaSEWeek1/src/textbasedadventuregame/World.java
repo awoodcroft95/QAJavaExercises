@@ -43,11 +43,17 @@ public class World {
             return "The area is covered in small spiky plants, you have to move carefully to avoid getting spiked.";
         }else if (random >= 10 && random < 20){
             return "The water here goes up to just below your hips, it is cold and cloudy, you have to cautiously nake your way through.";
-        }
-        else if (random >= 20 && random < 30) {
+        } else if (random >= 20 && random < 30) {
             return "Rain starts to pour down around you, there is a small tree to sit under until the rain stops";
+        } else if (random >= 30 && random < 40) {
+            return "This area is relatively flat and and dry compared to the rest of the Moore.";
+        } else if (random >= 40 && random < 50) {
+            return "ToDo";
+        } else if (random >= 50 && random < 60) {
+            return "ToDo";
+        } else {
+        return "...";
         }
-        return "";
     }
 
     public void setPlayer(String name){
@@ -56,5 +62,9 @@ public class World {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public List<Location> getLocations() {
+        return locations;
     }
 }

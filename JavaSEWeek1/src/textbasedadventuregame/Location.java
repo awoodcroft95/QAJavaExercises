@@ -10,7 +10,6 @@ public class Location {
     private String locationDesc;
     private int row;
     private int column;
-    private List<Exit> exits = new ArrayList<Exit>();
 
     public Location(String name, String description, int row, int column){
         this.locationName = name;
@@ -39,14 +38,6 @@ public class Location {
         this.locationDesc = locationDesc;
     }
 
-    public List<Exit> getExits() {
-        return exits;
-    }
-
-    public void addExits(Exit exit){
-        this.exits.add(exit);
-    }
-
     public void addItem(Item item){
         this.items.add(item);
     }
@@ -65,6 +56,10 @@ public class Location {
 
     public void setColumn(int column) {
         this.column = column;
+    }
+
+    public int getIndex(){
+        return (this.getRow() * 10) + getColumn();
     }
 
     @Override

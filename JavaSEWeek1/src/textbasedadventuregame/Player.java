@@ -7,6 +7,7 @@ public class Player {
 
     private String name;
     private List<Item> inventory = new ArrayList<Item>();
+    private int locationIndex;
 
     public Player(String name){
         this.name = name;
@@ -32,4 +33,11 @@ public class Player {
         return this.getInventory().get(this.getInventory().size()-1).toString();
     }
 
+    public int getLocationIndex() {
+        return locationIndex;
+    }
+
+    public void setLocationIndex(int locationIndex) {
+        this.locationIndex = locationIndex;
+    }
 }
