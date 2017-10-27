@@ -3,22 +3,21 @@ package textbasedadventuregame;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+public class Player extends Character {
 
-    private String name;
     private List<Item> inventory = new ArrayList<Item>();
     private int locationIndex;
 
     public Player(String name){
-        this.name = name;
+        super(name);
     }
 
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     public void setName(String name) {
-        this.name = name;
+        super.setName(name);
     }
 
     public List<Item> getInventory() {
@@ -39,5 +38,9 @@ public class Player {
 
     public void setLocationIndex(int locationIndex) {
         this.locationIndex = locationIndex;
+    }
+
+    public String toString(){
+        return (this.getName() + "-" + getLocationIndex());
     }
 }
