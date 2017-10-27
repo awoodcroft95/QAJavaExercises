@@ -1,3 +1,5 @@
+package basicexercises;
+
 public class HelloWorldExample {
 
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package intermediateexercises;
+
 public class IntermediateExercises {
     public static void main(String[] args){
         System.out.println(blackJack(12, 21));

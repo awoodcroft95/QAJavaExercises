@@ -16,7 +16,7 @@ public class World {
     }
 
 
-    public void generateLoactions(){
+    public void generateLocations(){
         String tempName;
         String tempDesc = "A foggy barren moore surrounds you, the fog is so dense you can't see very far into the distance.";
         for(int i = 0; i < 10; i++){
@@ -31,7 +31,8 @@ public class World {
                     tempName = "The Moore Low Lands";
                 }
                 descriptionGenerator(j);
-                tempLocation = new Location(tempName, tempDesc);
+                tempLocation = new Location(tempName, tempDesc, i, j);
+                locations.add(tempLocation);
             }
         }
     }

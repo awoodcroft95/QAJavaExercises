@@ -15,7 +15,7 @@ public class TextBasedAdventure {
 
         boolean programRunning = true;
         //Setup
-        newWorld.generateLoactions();
+        newWorld.generateLocations();
         System.out.println("The Barren Moore....");
         System.out.println("To start playing enter you name:");
         String playerName = sc.nextLine();
