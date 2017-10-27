@@ -49,7 +49,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return getLocationName() + ": " + getLocationDesc();
+        return getLocationName() + "-" + getLocationDesc();
     }
 
     //override toString - output information about the location

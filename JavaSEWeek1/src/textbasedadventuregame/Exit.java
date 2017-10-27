@@ -4,15 +4,15 @@ import java.util.List;
 
 public class Exit {
 
-    private int north = 1;
-    private int east = 2;
-    private int south = 3;
-    private int west = 4;
+    private final int north = 1;
+    private final int east = 2;
+    private final int south = 3;
+    private final int west = 4;
 
-    private String northStr = "north";
-    private String eastStr = "east";
-    private String southStr = "south";
-    private String westStr = "west";
+    private final String northStr = "north";
+    private final String eastStr = "east";
+    private final String southStr = "south";
+    private final String westStr = "west";
 
     private Location leadsTo = null;
 
@@ -40,7 +40,27 @@ public class Exit {
         }
     }
 
+    public Location getLeadsTo() {
+        return leadsTo;
+    }
 
+    public void setLeadsTo(Location leadsTo) {
+        this.leadsTo = leadsTo;
+    }
 
+    public String getDirectionName() {
+        return directionName;
+    }
 
+    public void setDirectionName(String directionName) {
+        this.directionName = directionName;
+    }
+
+    public int getDirectionNumber() {
+        return directionNumber;
+    }
+
+    public void setDirectionNumber(int directionNumber) {
+        this.directionNumber = directionNumber;
+    }
 }
